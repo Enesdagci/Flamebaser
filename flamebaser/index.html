@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flamebaser</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="Untitled design.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>    
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Untitled design.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                Flamebaser
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> 
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ana sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Özellikler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community">Topluluklar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Ürünler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#service">Servisler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#search">Ara</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                </ul>
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Giriş Yap</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Kullanıcı Adı</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Kullanıcı Adı" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Şifre</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Şifre" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100">Giriş Yap</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="d-flex">
+                    <button class="btn btn-outline-primary me-2" type="button" onclick="document.getElementById('loginModal').style.display='block'">Giriş yap</button>
+                    <button class="btn btn-primary" type="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Kaydol</button>
+                    <div id="id01" class="modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <form class="modal-content" action="/index.html">
+                          <div class="container">
+                            <h1>Kayıt Ol</h1>
+                            <p>Hesap oluşturmak için lütfen doldurun</p>
+                            <hr>
+                            <label for="email"><b>E-mail</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
+                      
+                            <label for="psw"><b>Şifre</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                      
+                            <label for="psw-repeat"><b>Şifreyi Tekrar Et</b></label>
+                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                            
+                            <label>
+                              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Beni hatırla
+                            </label>
+                      
+                            <p>By creating an account you agree to our <a href="#terms">Lisans ve Sözleşmeler</a>.</p>
+                      
+                            <div class="clearfix">
+                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">İptal Et</button>
+                              <button type="submit" class="signupbtn">Kayıt Ol</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Flamebaser' e Hoşgeldiniz.</h1>
+            <p class="lead">Easily integrate Firebase with your web applications</p>
+        </div>
+    </header>
+
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Authentication</h5>
+                            <p class="card-text">Securely authenticate users with Firebase Authentication.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Database</h5>
+                            <p class="card-text">Store and sync data in real-time with Firebase Realtime Database.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hosting</h5>
+                            <p class="card-text">Deploy web apps quickly with Firebase Hosting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="cs-logi-footer-container">
+            <div class="cs-logi-footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="cs-logi-cor-office cs-footer-widget">
+                                <div class="cs-footer-widget-title">
+                                    <h6>Corporate Office</h6>
+                                </div>
+                                <p class="cs-max-width-200">
+                                612-7 Roanoke Rd, Toronto, ON M3A 1E3, Canada
+                                </p>
+                                <div class="cs-logi-emai-phone">
+                                    <a href="#" class="cs-text-style-h6">+1-416-8241228</a>
+                                    <a href="#" class="cs-text-style-h6">info@email.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="cs-logi-cor-office cs-footer-widget">
+                                <div class="cs-footer-widget-title">
+                                    <h6>Canada Office</h6>
+                                </div>
+                                <p class="cs-max-width-200">
+                                    612-7 Roanoke Rd, Toronto, ON M3A 1E3, Canada
+                                </p>
+                                <div class="cs-logi-emai-phone">
+                                    <a href="#" class="cs-text-style-h6">+1-416-8241228</a>
+                                    <a href="#" class="cs-text-style-h6">info@email.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-5">
+                            <div class="cs-footer-widget">
+                                <div class="cs-footer-widget-title">
+                                    <h6>Useful Link</h6>
+                                </div>
+                                <div class="cs-logi-footer-useful-link">
+                                    <ul>
+                                        <li><a href="about.html" class="cs-text_b_line"><span>About Us</span></a></li>
+                                        <li><a href="contact.html" class="cs-text_b_line"><span>Contact Us</span></a></li>
+                                        <li><a href="team.html" class="cs-text_b_line"><span>Our Crew</span></a></li>
+                                        <li> <a href="faq.html" class="cs-text_b_line"><span>Faq Pages</span></a></li>
+                                        <li><a href="contact.html" class="cs-text_b_line"><span>Free Quote</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-7">
+                            <div class="cs-footer-widget">
+                                <div>
+                                    <div class="cs-footer-widget-title">
+                                        <h6>Newsletter</h6>
+                                    </div>
+                                    <p>Delivering Excellence in Global Logistics.</p>
+                                </div>
+                                <form class="cs-logi-newsletter">
+                                    <input class="cs-newsletter-email" type="email" placeholder="Enter Your Email Address" required="">
+                                    <button class="cs-newsletter-btn cs_center svg-left-to-right-animation-wrap" type="submit">
+                                        Subscribe
+                                        <span class="svg-left-to-right-animation">
+                                        <i class="flaticon-right-arrow"></i>
+                                        <i class="flaticon-right-arrow"></i>
+                                        </span>
+                                    </button>
+                                </form>
+                                <div class="cs-social-common">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="flaticon-facebook-app-symbol"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="flaticon-linkedin-big-logo"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="flaticon-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="flaticon-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="cs-logi-copy-area">
+                    <div class="cs-footer-copy-branding">
+                        <div class="cs-footer-copy-branding">
+                            <a href="index.html">
+                                <img src="assets/img/logo_white_text.png" alt="LogiHub">
+                            </a>
+                            <span>Delivering Excellence in Global Logistics.</span>
+                        </div>
+                    </div>
+                    <div class="cs-footer-copy-text">
+                        <p>© 2024 <a href="#">Thememarch.</a> All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-logi-footer-border">
+                <svg width="1920" height="186" viewBox="0 0 1920 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.2" d="M1919.95 15.0784C1789.84 47.7321 1593.01 73.75 1313.98 21.8595C940.467 -47.6007 736.04 72.8343 688.434 185.993M0.135498 174.227C71.8468 137.994 149.172 106.307 231.119 82.6053C550.484 -9.76492 1181.35 52.3115 1168.87 185.973" stroke="white"></path>
+                </svg>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
