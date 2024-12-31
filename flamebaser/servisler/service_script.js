@@ -33,6 +33,7 @@ document.getElementById('loginBtn').addEventListener('click', function(event) {
       alert("Lütfen kullanıcı adı ve şifrenizi doldurun.");
   }
 });
+
 function openSearch() {
   document.getElementById('searchModal').style.display = 'block';
 }
@@ -54,35 +55,36 @@ function closeSearch() {
 }
 
 function handleLogin(event) {
-  event.preventDefault(); // Sayfanın yenilenmesini engelle
-
-  // Kullanıcı adını al
-  const username = document.getElementById('username').value;
-
-  if (username) {
-      // Pop-up mesajı göster
-      alert(`Hoş geldiniz, ${username}!`);
-
-      // Modalı kapat
-      const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-      modal.hide();
-
-      // Formu sıfırla
-      event.target.reset();
-  } else {
-      alert("Lütfen kullanıcı adınızı giriniz.");
+    event.preventDefault(); // Sayfanın yenilenmesini engelle
+  
+    // Kullanıcı adını al
+    const username = document.getElementById('username').value;
+  
+    if (username) {
+        // Pop-up mesajı göster
+        alert(`Hoş geldiniz, ${username}!`);
+  
+        // Modalı kapat
+        const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+        modal.hide();
+  
+        // Formu sıfırla
+        event.target.reset();
+    } else {
+        alert("Lütfen kullanıcı adınızı giriniz.");
+    }
   }
-}
-
+  
 function handleRegister(event) {
-  event.preventDefault();
-  const email = document.getElementById('email').value;
-
-  if (email) {
-      alert(`Kayıt başarılı! Hoş geldiniz, ${email}!`);
-      document.getElementById('id01').style.display = 'none';
-      event.target.reset();
-  } else {
-      alert("Lütfen bilgilerinizi doldurun.");
-  }
+    event.preventDefault();  
+    const email = document.getElementById('email').value;
+  
+    if (email) {
+        alert(`Kayıt başarılı! Hoş geldiniz, ${email}!`);
+        document.getElementById('id01').style.display = 'none';
+        event.target.reset();
+    } else {
+        alert("Lütfen bilgilerinizi doldurun.");
+    }
 }
+    

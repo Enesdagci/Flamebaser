@@ -7,14 +7,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="Untitled design.png">
+    <link rel="icon" type="image/png" href="./images/Untitled design.png">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>    
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light"> 
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="Untitled design.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                <img src="./images/Untitled design.png" alt="Logo" style="height: 40px; margin-right: 10px;">
                 Flamebaser
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,105 +26,298 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Ana sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
                     <li class="nav-item"><a class="nav-link" href="#features">Özellikler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#community">Topluluklar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Ürünler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#service">Servisler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#search">Ara</a></li>                    
-                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                    <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Topluluklar
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
+                                <li><a class="dropdown-item" href="topluluklar/topluluk.html" target="_blank">Geliştiriciler Topluluğu</a></li>
+                                <li><a class="dropdown-item" href="topluluklar/topluluk.html" target="_blank">Kullanıcı Forumları</a></li>
+                                <li><a class="dropdown-item" href="topluluklar/topluluk.html" target="_blank">Firebase Meetups</a></li>
+                            </ul>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ürünler
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#pricing" id="flamerLink">Flamer</a></li>
+                                <li><a class="dropdown-item" href="#pricing">Melter Flamer</a></li>
+                                <li><a class="dropdown-item" href="#pricing">Inferno of Lava</a></li>
+                            </ul>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Servisler
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="serviceDropdown">
+                                <li><a class="dropdown-item" href="servisler/service.html" target="_self">Firebase Öğreticisi</a></li>
+                                <li><a class="dropdown-item" href="servisler/service.html" target="_self">Çalışma Alanı</a></li>
+                                <li><a class="dropdown-item" href="servisler/service.html" target="_self">Program Kontrolcüsü</a></li>
+                                <li><a class="dropdown-item" href="servisler/service.html" target="_self">İş Başvurusu</a></li>
+                                <li><a class="dropdown-item" href="servisler/service.html" target="_self">Flamehaton</a></li>
+                                <li><a class="dropdown-item" href="servisler/service.html" target="_self">Flamecon</a></li>
+                            </ul>
+                        </li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="openSearch()">Ara</a></li>              
+                    <li class="nav-item"><a class="nav-link" href="/index.html#contact">İletişim</a></li>
                 </ul>
-                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="loginModalLabel">Giriş Yap</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="username" class="form-label">Kullanıcı Adı</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Kullanıcı Adı" required>
+                                                
+                <div class="d-flex">
+                    <button class="btn btn-outline-primary me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Giriş yap</button>
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title w-100 text-center" id="loginModalLabel">Sosyal Medya veya Hesabınız ile Giriş Yapınız</h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="loginForm" onsubmit="handleLogin(event)">
+                                        <div class="row g-3">
+                                            <div class="col-md-6 text-center">
+                                                <p>Sosyal Medya Girişi:</p>
+                                                <a href="#" class="btn btn-primary w-100 mb-2">
+                                                    <i class="fa fa-facebook fa-fw"></i> Facebook
+                                                </a>
+                                                <a href="#" class="btn btn-info w-100 mb-2 text-white">
+                                                    <i class="fa fa-twitter fa-fw"></i> Twitter
+                                                </a>
+                                                <a href="#" class="btn btn-danger w-100">
+                                                    <i class="fa fa-google fa-fw"></i> Google+
+                                                </a>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p class="text-center">Hesap Girişi:</p>
+                                                <input type="text" id="username" name="username" class="form-control mb-2" placeholder="Kullanıcı Adınızı giriniz." required>
+                                                <input type="password" name="password" class="form-control mb-2" placeholder="Şifrenizi giriniz." required>
+                                                <button type="submit" class="btn btn-success w-100">Giriş Yap</button>
+                                            </div>
+                                        </div>
+                                    </form>                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="d-flex justify-content-between w-100">
+                                        <a href="javascript:void(0);" class="btn btn-link" onclick="document.getElementById('navbarRegisterBtn').click()">Kayıt ol</a>
+                                        <a href="#" class="btn btn-link">Şifremi unuttum?</a>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Şifre</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Şifre" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-success w-100">Giriş Yap</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            
-                <div class="d-flex">
-                    <button class="btn btn-outline-primary me-2" type="button" onclick="document.getElementById('loginModal').style.display='block'">Giriş yap</button>
+                    
                     <button class="btn btn-primary" type="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Kaydol</button>
                     <div id="id01" class="modal">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <form class="modal-content" action="/index.html">
-                          <div class="container">
-                            <h1>Kayıt Ol</h1>
-                            <p>Hesap oluşturmak için lütfen doldurun</p>
-                            <hr>
-                            <label for="email"><b>E-mail</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
-                      
-                            <label for="psw"><b>Şifre</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                      
-                            <label for="psw-repeat"><b>Şifreyi Tekrar Et</b></label>
-                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                            
-                            <label>
-                              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Beni hatırla
-                            </label>
-                      
-                            <p>By creating an account you agree to our <a href="#terms">Lisans ve Sözleşmeler</a>.</p>
-                      
-                            <div class="clearfix">
-                              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">İptal Et</button>
-                              <button type="submit" class="signupbtn">Kayıt Ol</button>
+                        <div class="modal-content shadow-lg">
+                            <div class="modal-header bg-primary text-white">
+                                <h5 class="modal-title">Kayıt Ol</h5>
+                                <span onclick="document.getElementById('id01').style.display='none'" class="btn-close text-white" style="cursor: pointer; font-size: 1.2rem;"></span>
                             </div>
-                          </div>
-                        </form>
-                      </div>
+                            <div class="modal-body bg-light">
+                                <form id="registerForm" onsubmit="handleRegister(event)">
+                                    <p class="text-muted">Hesap oluşturmak için aşağıdaki bilgileri doldurun.</p>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="psw" class="form-label">Şifre</label>
+                                        <input type="password" class="form-control" id="psw" placeholder="Şifrenizi girin" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="psw-repeat" class="form-label">Şifreyi Tekrar Et</label>
+                                        <input type="password" class="form-control" id="psw-repeat" placeholder="Şifrenizi tekrar girin" required>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value="" id="remember" checked>
+                                        <label class="form-check-label" for="remember">Beni Hatırla</label>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <input type="radio" class="form-check-input me-2" id="terms" name="terms" value="accept" required>
+                                        <a href="#terms" class="text-primary text-decoration-underline">Kullanım Şartları ve Lisans Sözleşmesini</a> okudum, kabul ediyorum.
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100">Kayıt Ol</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer bg-primary text-white">
+                                <p class="mb-0">Hesabınız var mı? <a href="#" class="text-white text-decoration-underline">Giriş Yap</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </nav>
 
+    <div id="searchModal" class="search-modal">
+        <div class="search-container">
+            <span class="close" onclick="closeSearch()">&times;</span>
+            <input type="text" class="form-control" id="searchInput" placeholder="Aramak istediğiniz şey...">
+            <button class="btn btn-primary mt-2" onclick="openSearchPopup()">Ara</button>
+        </div>
+    </div>
+
+    <div id="searchPopup" class="modal" style="display:none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Arama Sonuçları</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Arama sonucu bulunamadı veya sonuçlar burada listelenecek.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeSearchPopup()">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="bg-primary text-white text-center py-5">
         <div class="container">
             <h1>Flamebaser' e Hoşgeldiniz.</h1>
-            <p class="lead">Easily integrate Firebase with your web applications</p>
+            <p class="lead">Web uygulamalarınızı kolayca entegre edin.</p>
         </div>
     </header>
 
-    <section id="features" class="py-5">
+    <section id="about" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Features</h2>
+            <h2 class="text-center mb-4 display-4 text-primary">Hakkımızda</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="./images/+.png" alt="Firebase Illustration" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Firebase, <strong>Google</strong> tarafından sağlanan, geliştiricilerin modern web ve mobil uygulamalar oluşturmasını kolaylaştıran bir platformdur. <strong>Hızlı</strong>, <strong>güvenilir</strong> ve <strong>esnek</strong> altyapısıyla Firebase, sadece bir araç değil, dijital projelerinizin başarıya ulaşması için bir iş ortağıdır.</p>
+                    <h5 class="text-secondary"><strong>Firebase ile neler yapabilirsiniz?</strong></h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item border-0 ps-0"><strong>Kullanıcı Doğrulama:</strong> Gelişmiş güvenlik sağlayan Firebase Authentication ile kullanıcılarınızın verilerini koruyun.</li>
+                        <li class="list-group-item border-0 ps-0"><strong>Gerçek Zamanlı Veritabanı:</strong> Firebase Realtime Database sayesinde verileri milisaniyeler içinde senkronize edin ve iş akışını hızlandırın.</li>
+                        <li class="list-group-item border-0 ps-0"><strong>Barındırma Hizmeti:</strong> Firebase Hosting ile web uygulamalarınızı güvenilir bir ortamda hızla yayınlayın.</li>
+                        <li class="list-group-item border-0 ps-0"><strong>Analitik ve Bildirimler:</strong> Kullanıcı etkileşimlerini anlayarak uygulamanızı optimize edin ve hedef odaklı bildirimler gönderin.</li>
+                    </ul>
+                    <h5 class="text-secondary"><strong>Kimler için uygun?</strong></h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item border-0 ps-0">Yeni başlayanlar için kolay bir giriş noktası</li>
+                        <li class="list-group-item border-0 ps-0">Profesyonel ekipler için güçlü ve ölçeklenebilir çözümler</li>
+                        <li class="list-group-item border-0 ps-0">Start-up’lar, büyük şirketler veya bireysel geliştiriciler</li>
+                    </ul>
+                    <p class="mt-4">Misyonumuz, herkesin yenilikçi projelerini hayata geçirebilmesi için güçlü, güvenli ve kullanıcı dostu bir altyapı sağlamaktır. Eğer <strong>Flamebaser</strong> platformumuzda Firebase’in gücünü keşfetmek istiyorsanız, sizinle bu yolculuğa çıkmaya hazırız!</p>
+                    <p class="h5 text-primary"><strong>Flamebaser ile dünyanızı kodlarla şekillendirin!</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center mb-4 display-4 text-warning">Özellikler</h2>
+            <div id="featuresCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <h3>Kimlik Doğrulama</h3>
+                                <p>Firebase Authentication ile kullanıcıların kimliğini güvenli bir şekilde doğrulayın.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <h3>Gerçek Zamanlı Veritabanı</h3>
+                                <p>Firebase ile gerçek zamanlı veritabanı ile verileri gerçek zamanlı olarak depolayın ve senkronize edin.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <h3>Hosting</h3>
+                                <p>Firebase Hosting ile web uygulamalarını hızlı bir şekilde dağıtın.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <h3>Bulut Depolaması</h3>
+                                <p>Firebase Bulut Depolama ile büyük dosyaları kolayca depolayın.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <h3>Bulut Fonksiyonları</h3>
+                                <p>Firebase özellikleri ve HTTPS istekleri tarafından tetiklenen olaylara yanıt olarak arka uç kodunu çalıştırın.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-center">
+                                <h3>Özel Çalışma Alanı</h3>
+                                <p>Flamebaser'da kendinizi denemek için özel çalışma alanlarını kullanabilirsiniz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Önceki</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Sonraki</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="team" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Ekip ile tanışın</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="column">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Authentication</h5>
-                            <p class="card-text">Securely authenticate users with Firebase Authentication.</p>
+                        <img src="./images/avatar1.jpg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            <h2>Enes Dağdelen</h2>
+                            <p class="title">Founder Computer Engineer</p>
+                            <p>Gömülü sistemler, Robotik, Yazılım geliştirme,Elektronik-donanım uzmanı</p>
+                            <p>example@example.com</p>
+                            <p><button class="button">Temasa geçin</button></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <div class="column">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Database</h5>
-                            <p class="card-text">Store and sync data in real-time with Firebase Realtime Database.</p>
+                        <img src="./images/avatar2.png" alt="Mike" style="width:100%">
+                        <div class="container">
+                            <h2>Burhan Arar</h2>
+                            <p class="title">Veritabanı Uzmanı, DevOps Uzmanı</p>
+                            <p>Sql işlemleri, Kubernetes-dockers-jenkins uzmanı</p>
+                            <p>example@example.com</p>
+                            <p><button class="button">Temasa geçin</button></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                
+                <div class="column">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Hosting</h5>
-                            <p class="card-text">Deploy web apps quickly with Firebase Hosting.</p>
+                        <img src="./images/avatar3.png" alt="John" style="width:100%">
+                        <div class="container">
+                            <h2>Canik Taşlı</h2>
+                            <p class="title">Siber Güvnelik uzmanı</p>
+                            <p>Exploitler, Ddos savunması, wifi güvenliği uzmanı</p>
+                            <p>example@example.com</p>
+                            <p><button class="button">Temasa geçin</button></p>
                         </div>
                     </div>
                 </div>
@@ -131,146 +325,175 @@
         </div>
     </section>
 
+    <section id="pricing" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Ürünlerimiz</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title">Flamer</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead">Ücretsiz</p>
+                            <ul class="list-unstyled">
+                                <li>10GB Depolama</li>
+                                <li>100 mb/sn Veri iletim hızı</li>
+                                <li>10 Domain</li>
+                                <li>10GB Bulut depolama alanı</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Kayıt Ol</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="card-title">Metal Melter</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead">50 TL/Aylık</p>
+                            <ul class="list-unstyled">
+                                <li>50GB Depolama</li>
+                                <li>500 mb/sn Veri iletim hızı </li>
+                                <li>50 Domains</li>
+                                <li>500GB Bulut depolama alanı</li>
+                            </ul>
+                            <a href="#" class="btn btn-success">Satın al</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="card-title">Inferno of Lava </h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="lead">300 TL/Aylık</p>
+                            <ul class="list-unstyled">
+                                <li>10 TB Depolama</li>
+                                <li>10 Gb/sn Veri iletim hızı</li>
+                                <li>100 Domains</li>
+                                <li>100TB Bulut depolama alanı</li>
+                            </ul>
+                            <a href="#" class="btn btn-danger">Satın al</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 display-4 text-primary">Kullanıcı Yorumları</h2>
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 text-center">
+                                <blockquote class="blockquote">
+                                    <p class="mb-4">"Firebase ile projemiz sadece birkaç hafta içinde hazır hale geldi. Kullanımı çok kolay ve inanılmaz derecede güçlü!"</p>
+                                    <footer class="blockquote-footer">Ahmet Yılmaz, <cite title="Source Title">Geliştirici</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 text-center">
+                                <blockquote class="blockquote">
+                                    <p class="mb-4">"Firebase’in Realtime Database özelliği, iş süreçlerimizi daha verimli hale getirdi. Harika bir çözüm!"</p>
+                                    <footer class="blockquote-footer">Elif Kaya, <cite title="Source Title">Ürün Müdürü</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 text-center">
+                                <blockquote class="blockquote">
+                                    <p class="mb-4">"Barındırma hizmetleri, hızlı ve güvenilir. Firebase ekibi harika bir iş çıkarmış!"</p>
+                                    <footer class="blockquote-footer">Murat Demir, <cite title="Source Title">Teknik Lider</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    
     <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
+            <h2 class="text-center mb-4">İletişime Geç</h2>
             <form>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    <label for="name" class="form-label">İsim</label>
+                    <input type="text" class="form-control" id="name" placeholder="İsminizi giriniz.">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    <label for="email" class="form-label">E-posta</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-postanızı giriniz.">
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="3" placeholder="Your Message"></textarea>
+                    <label for="message" class="form-label">İleti</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="İletmek istediğinizi giriniz."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="submit" class="btn btn-primary">Gönder</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <div class="cs-logi-footer-container">
-            <div class="cs-logi-footer-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="cs-logi-cor-office cs-footer-widget">
-                                <div class="cs-footer-widget-title">
-                                    <h6>Corporate Office</h6>
-                                </div>
-                                <p class="cs-max-width-200">
-                                612-7 Roanoke Rd, Toronto, ON M3A 1E3, Canada
-                                </p>
-                                <div class="cs-logi-emai-phone">
-                                    <a href="#" class="cs-text-style-h6">+1-416-8241228</a>
-                                    <a href="#" class="cs-text-style-h6">info@email.com</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="cs-logi-cor-office cs-footer-widget">
-                                <div class="cs-footer-widget-title">
-                                    <h6>Canada Office</h6>
-                                </div>
-                                <p class="cs-max-width-200">
-                                    612-7 Roanoke Rd, Toronto, ON M3A 1E3, Canada
-                                </p>
-                                <div class="cs-logi-emai-phone">
-                                    <a href="#" class="cs-text-style-h6">+1-416-8241228</a>
-                                    <a href="#" class="cs-text-style-h6">info@email.com</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-5">
-                            <div class="cs-footer-widget">
-                                <div class="cs-footer-widget-title">
-                                    <h6>Useful Link</h6>
-                                </div>
-                                <div class="cs-logi-footer-useful-link">
-                                    <ul>
-                                        <li><a href="about.html" class="cs-text_b_line"><span>About Us</span></a></li>
-                                        <li><a href="contact.html" class="cs-text_b_line"><span>Contact Us</span></a></li>
-                                        <li><a href="team.html" class="cs-text_b_line"><span>Our Crew</span></a></li>
-                                        <li> <a href="faq.html" class="cs-text_b_line"><span>Faq Pages</span></a></li>
-                                        <li><a href="contact.html" class="cs-text_b_line"><span>Free Quote</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-7">
-                            <div class="cs-footer-widget">
-                                <div>
-                                    <div class="cs-footer-widget-title">
-                                        <h6>Newsletter</h6>
-                                    </div>
-                                    <p>Delivering Excellence in Global Logistics.</p>
-                                </div>
-                                <form class="cs-logi-newsletter">
-                                    <input class="cs-newsletter-email" type="email" placeholder="Enter Your Email Address" required="">
-                                    <button class="cs-newsletter-btn cs_center svg-left-to-right-animation-wrap" type="submit">
-                                        Subscribe
-                                        <span class="svg-left-to-right-animation">
-                                        <i class="flaticon-right-arrow"></i>
-                                        <i class="flaticon-right-arrow"></i>
-                                        </span>
-                                    </button>
-                                </form>
-                                <div class="cs-social-common">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="flaticon-facebook-app-symbol"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="flaticon-linkedin-big-logo"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="flaticon-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="flaticon-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Hakkımızda</h5>
+                    <p>Flamebaser, web projelerinizi kolaylıkla Firebase ile entegre etmenizi sağlayan modern bir platformdur. Misyonumuz, kullanıcı dostu ve güvenilir çözümler sunmaktır.</p>
+                    <a href="#about" class="btn btn-outline-light btn-sm mt-3">Daha Fazla Bilgi</a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Hızlı Bağlantılar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#features" class="text-white">Özellikler</a></li>
+                        <li><a href="#community" class="text-white">Topluluklar</a></li>
+                        <li><a href="#pricing" class="text-white">Ürünler</a></li>
+                        <li><a href="#contact" class="text-white">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Bültenimize Abone Olun</h5>
+                    <p>En son yeniliklerden haberdar olmak için e-posta bültenimize abone olun.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="E-posta adresinizi girin" required>
+                        <button type="submit" class="btn btn-primary">Gönder</button>
+                    </form>
                 </div>
             </div>
-            <div class="container">
-                <div class="cs-logi-copy-area">
-                    <div class="cs-footer-copy-branding">
-                        <div class="cs-footer-copy-branding">
-                            <a href="index.html">
-                                <img src="assets/img/logo_white_text.png" alt="LogiHub">
-                            </a>
-                            <span>Delivering Excellence in Global Logistics.</span>
-                        </div>
-                    </div>
-                    <div class="cs-footer-copy-text">
-                        <p>© 2024 <a href="#">Thememarch.</a> All Rights Reserved.</p>
-                    </div>
-                </div>
+            <div class="text-center mt-4">
+                <a href="#" class="me-3 text-white"><i class="fa fa-facebook fa-lg"></i></a>
+                <a href="#" class="me-3 text-white"><i class="fa fa-twitter fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/enes-da%C4%9Fdelen-27204a2a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="me-3 text-white"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fa fa-instagram fa-lg"></i></a>
             </div>
-            <div class="cs-logi-footer-border">
-                <svg width="1920" height="186" viewBox="0 0 1920 186" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path opacity="0.2" d="M1919.95 15.0784C1789.84 47.7321 1593.01 73.75 1313.98 21.8595C940.467 -47.6007 736.04 72.8343 688.434 185.993M0.135498 174.227C71.8468 137.994 149.172 106.307 231.119 82.6053C550.484 -9.76492 1181.35 52.3115 1168.87 185.973" stroke="white"></path>
-                </svg>
+            <div class="text-center mt-3">
+                <p class="mb-0">&copy; 2024 Flamebaser. Tüm Hakları Saklıdır.</p>
+                <p class="mb-0"><a href="#terms" class="text-white">Lisans ve Sözleşmeler</a> | <a href="#privacy" class="text-white">Gizlilik Politikası</a></p>
             </div>
         </div>
     </footer>
-
+    
     <!-- Bootstrap Bundle with Popper -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
